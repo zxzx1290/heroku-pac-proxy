@@ -10,12 +10,12 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
+app.get('/', function(req, res) {
   request({
       method: 'GET',
       url: 'http://pac.uku.im/regex',
-  },function(error, response, body){
-      response.send('response');
+  },function(error, res, body){
+      res.send('response');
   });
 });
 
