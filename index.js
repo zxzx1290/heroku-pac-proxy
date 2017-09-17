@@ -15,7 +15,7 @@ app.get('/', function(req, res) {
       method: 'GET',
       url: 'http://pac.uku.im/regex',
   },function(error, ret, body){
-      res.send(ret);
+      res.send(body);
   });
 });
 
