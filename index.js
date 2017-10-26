@@ -19,6 +19,15 @@ app.get('/', function(req, res) {
   });
 });
 
+app.get('/openstreetmap', function(req, res) {
+  request({
+      method: 'GET',
+      url: 'http://polygons.openstreetmap.fr/get_geojson.py?id='+req.query.id+"&params=0",
+  },function(error, ret, body){
+      res.send(body);
+  });
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
